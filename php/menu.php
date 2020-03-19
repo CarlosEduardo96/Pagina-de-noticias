@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (@!$_SESSION['user']) {
-	header("Location: /php/menu.php");
-}
+   session_start();
+   if (@!$_SESSION['id']) {
+    header("Location:../index.php");
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,9 +19,9 @@ if (@!$_SESSION['user']) {
     <div class="navbar-fixed">
         <nav class="red">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo"><i class="material-icons">public</i>Noticias</a>
+                <a href="#" class="brand-logo"><i class="material-icons">public</i>Noticias</a>                
                 <ul class="right hide-on-med-and-down row">                
-                  
+                    <li><a><?php $name=$_SESSION['user']." ".$_SESSION['ape']; echo(strtoupper($name));?></a></li>
                     <li><a href="#"><i class="material-icons">refresh</i></a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="id_notas">Noticias<i class="material-icons right">view_module</i></a></li>
                     
@@ -69,12 +69,24 @@ if (@!$_SESSION['user']) {
             ?>
     </div>
 
+<!--Agregar noticias-->
+
+  <div>
+
+        <!-- Modal Structure -->
+        <?php
+            
+            include("formNoticias.php");
+        ?>
+  </div>
+<a href="#" id="textorespuesta"></a>
+
     <div class="fixed-action-btn direction-left active">
             <div class="row">                               
                 <a class="btn-floating btn-large waves-effect waves-light tooltipped red" id="buscarbtn"data-position="left" data-tooltip="Buscar"><i class="material-icons">search</i></a>
             </div>
             <div class="row">                               
-                <a class="btn-floating btn-large waves-effect waves-light tooltipped red" data-position="left" data-tooltip="Agregar una noticia"><i class="material-icons">add</i></a>
+                <a href="#modal1" class="btn-floating btn-large waves-effect waves-light tooltipped modal-trigger red" data-position="left" data-tooltip="Agregar una noticia"><i class="material-icons">add</i></a>
             </div>
             <div class="row">
                 <a class="btn-floating btn-large waves-effect waves-light tooltipped red" data-position="left" data-tooltip="Mis Noticias"><i class="material-icons">folder_open</i></a>

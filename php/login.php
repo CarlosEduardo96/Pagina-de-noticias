@@ -21,7 +21,7 @@
                     echo("true");
                 }
                 else{
-                    echo("Error al iniciar sesion ");
+                    echo("Error al iniciar sesion");
                 }
                               
             }            

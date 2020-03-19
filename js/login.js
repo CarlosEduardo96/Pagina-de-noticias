@@ -9,7 +9,7 @@ $(document).ready(function(){
             pwd: pass
         },function(respuesta){
             if(respuesta=="true"){               
-                window.location.href = "/materialize/php/menu.php";                          
+                window.location.href = "/materialize/php/menu.php?id=user";                          
             }
             else{
                 $("#mensaje").show();

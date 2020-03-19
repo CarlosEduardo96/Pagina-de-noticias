@@ -8,4 +8,4 @@ Dependiendo el tipo de usuario el sitio web permitira realizar funciones mas esp
 * MariaDB
 * Estructura HTML5
 * Jquery v3.4.1
-* Framework Materialize v1.0.0
+* Framework CSS Materialize v1.0.0

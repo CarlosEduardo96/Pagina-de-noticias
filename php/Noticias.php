@@ -3,12 +3,12 @@
     $query="select * from noticias ORDER by id DESC";
     $link=mysqli_query($conectar,$query);  
     $count=0;
+    
     while ($reg= mysqli_fetch_array($link))
-    {
-        
+    {        
         $fechaComoEntero = strtotime($reg['fecha']);
         $fechap=date("d/m/Y",$fechaComoEntero);
-        echo("<div class=\"col s3\">");            
+        echo("<div class=\"col s4\">");            
             echo("<div class=\"card large z-depth-3\" >");                
                 echo("<div class=\"card-image\">");
                     echo("<img src=\"../img/".$reg['id_autor'].date("Y-m-d-H-i-s",$fechaComoEntero).".png\">");                                                   
@@ -31,9 +31,9 @@
         echo("</div>");      
         $count=$count+1;
     }
-
+    
     if($count==0){
-        echo("<h1 class=\"center blue-text\">No hay noticias que mostrar</h1>");
+        echo("<h1 id=\"defaultnotice\" class=\"center blue-text\">No hay noticias que mostrar</h1>");
     }
 
 ?>

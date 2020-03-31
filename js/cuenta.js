@@ -20,6 +20,7 @@ $(document).ready(function(){
             cpwd: cpwd
         },function(respuesta){
             if(respuesta=="true"){
+                alert("¡Felicidades fuistes aceptado!");
                 window.location.href = "/materialize/index.php";
             }
             else{

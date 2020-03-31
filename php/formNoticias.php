@@ -4,9 +4,8 @@
         <div class="modal-content">
             <div class="row">
                 
-                <h6 class="center">Fecha de publicacion: <?php echo((string)date('Y-m-d'));?>  </h6>
-                </p> </h6>
-                             
+                <h2 class="center red-text">Nota informativa</h2>
+                  
                 <div class="input-field col s12">                    
                     <input id="tituloNota" type="text" class="validate">
                     <label for="tituloNota">Titulo</label>

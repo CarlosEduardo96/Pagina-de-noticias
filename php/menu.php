@@ -21,7 +21,7 @@
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo"><i class="material-icons">public</i>Noticias</a>                
                 <ul class="right hide-on-med-and-down row">                
-                    <li><a><?php $name=$_SESSION['user']." ".$_SESSION['ape']; echo(strtoupper($name));?></a></li>
+                    <li><a><?php $name=$_SESSION['user']." ".$_SESSION['ape']; echo($name);?></a></li>
                     <li><a href="#"><i class="material-icons">refresh</i></a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="id_notas">Noticias<i class="material-icons right">view_module</i></a></li>
                     
@@ -72,7 +72,6 @@
 <!--Agregar noticias-->
 
   <div>
-
         <!-- Modal Structure -->
         <?php
             
@@ -83,15 +82,17 @@
 
     <div class="fixed-action-btn direction-left active">
             <div class="row">                               
-                <a class="btn-floating btn-large waves-effect waves-light tooltipped red" id="buscarbtn"data-position="left" data-tooltip="Buscar"><i class="material-icons">search</i></a>
+                <a class="btn-floating btn-large waves-effect waves-light tooltipped red" id="buscarbtn" data-position="left" data-tooltip="Buscar"><i class="material-icons">search</i></a>
             </div>
             <div class="row">                               
                 <a href="#modal1" class="btn-floating btn-large waves-effect waves-light tooltipped modal-trigger red" data-position="left" data-tooltip="Agregar una noticia"><i class="material-icons">add</i></a>
             </div>
             <div class="row">
-                <a class="btn-floating btn-large waves-effect waves-light tooltipped red" data-position="left" data-tooltip="Mis Noticias"><i class="material-icons">folder_open</i></a>
+                <a id="miscarpeta" class="btn-floating btn-large waves-effect waves-light tooltipped red" data-position="left" data-tooltip="Mis Noticias"><i class="material-icons">folder_open</i></a>
             </div>
     </div>   
+    <div id="ellaT" hidden><?php echo ($_SESSION['token']);?></div>
+
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>    

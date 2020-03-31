@@ -35,9 +35,9 @@ $( document ).ready(function(){
       });
     });
     //Agregar Notas_________________________________
-    $("#formularioNota").bind("submit",function(){
-
+    $("#formularioNota").bind("submit",function(){      
       var frmData=new FormData;
+      frmData.append("ellaT",$("#ellaT").val());
       frmData.append("imagen",$("input[name=imagen]")[0].files[0]);    
       frmData.append("titulo",$("#tituloNota").val());
       frmData.append("descripcion",$("#descripcionNota").val());
@@ -55,13 +55,14 @@ $( document ).ready(function(){
           success: function(respuesta){
             var respuesta= JSON.parse(respuesta);           
 
-            if(respuesta.resultado){
+            if(respuesta.resultado){              
+              $("#defaultnotice").hide();
               M.toast({ html: respuesta.msn })
               console.log(respuesta.msn);
               var contenido=$("#Bloques").html();
-              var cards="<div class=\"col s3\"><div class=\"card large z-depth-3\"><div class=\"card-image\"><img src=\""+respuesta.link+"\"></div><div class=\"card-content\"><span class=\"card-title\">"+$("#tituloNota").val()+"</span><span class=\"blue-text\">Tu publicacion<p>publicado: Hoy mismo</p></span><p>"+$("#descripcionNota").val()+"</p></div><div class=\"card-action center\"><a href=\"blog.php?id="+respuesta.folio+"\">Leer mas..</a></div></div></div>";
+              var cards="<div class=\"col s4\"><div class=\"card large z-depth-3\"><div class=\"card-image\"><img src=\""+respuesta.link+"\"></div><div class=\"card-content\"><span class=\"card-title\">"+$("#tituloNota").val()+"</span><span class=\"blue-text\">Tu publicacion<p>publicado: Hoy mismo</p></span><p>"+$("#descripcionNota").val()+"</p></div><div class=\"card-action center\"><a href=\"blog.php?id="+respuesta.folio+"\">Leer mas..</a></div></div></div>";
               $("#Bloques").html(cards+contenido);
-              $("##formularioNota")[0].reset();
+              $("#formularioNota")[0].reset();       
             }
             else{
               M.toast({ html: respuesta.msn })
@@ -76,4 +77,12 @@ $( document ).ready(function(){
         return false;
     });
     //______________________________________________
+
+    // Mis noticias::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    $("#miscarpeta").click(function(){
+        console.log("Mis noticias");
+        $("#Bloques").load("Misnoticias.php");
+        M.toast({html: '¡Tus Noticias Publicadas!'});
+    });
+
   });

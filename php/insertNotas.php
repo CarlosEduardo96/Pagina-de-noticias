@@ -5,6 +5,7 @@
     if(isset($_POST["titulo"]) && isset($_POST["descripcion"]) && isset($_POST["cuerpo"])){
         
         $id=$_SESSION['id'];
+        date_default_timezone_set("America/Mexico_City");
         $fecha=(string)date("Y-m-d-H-i-s");
         $titulo= $_POST["titulo"];
         $autor=$_SESSION['user']." ".$_SESSION['ape'];

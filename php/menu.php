@@ -26,7 +26,9 @@
                     <li><a href="#" class="dropdown-trigger" data-target="id_notas">Noticias<i class="material-icons right">view_module</i></a></li>
                     
                     <li><a class="dropdown-trigger" href="#!" data-target="id_drop">Opciones Avanzadas<i class="material-icons right">settingsx</i></a></li>
+                    <li><a href="acercade.php">Acerca de..<i class="material-icons right">info</i></a></li>
                     <li><a href="#" id="singout">Sing Out<i class="material-icons right">input</i></a></li>
+                    
                 </ul>
                
             </div> 
@@ -47,11 +49,12 @@
     </div>
     
     <ul id="id_notas" class="dropdown-content">
-        <li><a href="#">Hoy</a></li>          
-        <li><a href="#">Esta semana</a></li>
-        <li><a href="#">Este mes</a></li>
-        <li><a href="#">Este año</a></li>
-        <li><a href="#">Mas de un año</a></li>
+        <li><a href="#" onclick="orden('dia')">Hoy</a></li>    
+        <li><a href="#" onclick="orden('semana')">Esta semana</a></li>   
+        <li><a href="#" onclick="orden('mes')">Este mes</a></li>
+        <li><a href="#" onclick="orden('año')">Este año</a></li>
+        <li><a href="#" onclick="orden('masaño')">Mas de un año</a></li>
+        <li><a href="#" onclick="orden('todas')">Todas las noticias</a></li>
     </ul>
     <ul id="id_drop" class="dropdown-content">         
         <li><a href="#">Configuracion</a></li>
@@ -92,7 +95,7 @@
             </div>
     </div>   
     <div id="ellaT" hidden><?php echo ($_SESSION['token']);?></div>
-
+    <?php include("piepage.php"); ?>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/menu.js"></script>    

@@ -76,7 +76,6 @@ $( document ).ready(function(){
         //M.toast({html: 'Hoola Amigo!'})
         return false;
     });
-    //______________________________________________
 
     // Mis noticias::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     $("#miscarpeta").click(function(){
@@ -86,3 +85,40 @@ $( document ).ready(function(){
     });
 
   });
+
+  function orden(id){
+    var frmData=new FormData;
+    frmData.append("fecha",id);
+      $.ajax({
+        url: "ordenacion.php",
+        type: "POST",
+        data: frmData,
+        processData: false,
+        contentType: false,
+        cache: false,
+        beforeSend: function(){
+          M.toast({html: '¡Buscando noticias!'})
+        },
+        success: function(r){
+          var respuesta= JSON.parse(r);           
+          console.log(respuesta); 
+          if(respuesta.request){
+            M.toast({html: respuesta.msn })
+            $("#Bloques").html(respuesta.html);
+          }
+          else{
+            M.toast({ html: respuesta.msn });
+          }     
+        },
+        error: function(){
+           M.toast({html: 'Error al enviar los datos'});
+        }
+
+      });
+
+      /*$("#info").click(function(){
+
+      });*/
+  }
+
+  

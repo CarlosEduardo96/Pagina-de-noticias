@@ -59,6 +59,7 @@
                     <li><a href="menu.php">Noticias<i class="material-icons right">view_module</i></a></li>
                     
                     <li><a class="dropdown-trigger" href="#!" data-target="id_drop">Opciones Avanzadas<i class="material-icons right">settingsx</i></a></li>
+                    <li><a href="acercade.php">Acerca de..<i class="material-icons right">info</i></a></li>
                     <li><a href="#" id="singout">Sing Out<i class="material-icons right">input</i></a></li>
                 </ul>
                
@@ -97,6 +98,10 @@
             }
         }
     ?>   
+
+
+
+<?php include("piepage.php"); ?>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/blog.js"></script>    
